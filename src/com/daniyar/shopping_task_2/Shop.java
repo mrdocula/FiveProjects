@@ -11,11 +11,9 @@ import java.util.Queue;
 
 public class Shop {
     private Queue<Order> queue;
-    private Order order;
 
     public Shop() {
         this.queue = new LinkedList<>();
-        this.order = new Order();
     }
 
     public void addOneOrder(Order orderToAdd) {
@@ -23,37 +21,37 @@ public class Shop {
         System.out.println("The order ID: " + orderToAdd.getOrderID() + " was added.");
     }
 
-    public void extractNextFirstOrder(){
+    public void extractNextOrderAndProcess() {
 
-        if (!queue.isEmpty()){
-            System.out.println("First order in queue: " + queue.peek());
-        }else{
-        System.out.println("Queue is empty!!!");
+        if (!queue.isEmpty()) {
+            System.out.println("The " + queue.poll() + " processed.");
+        } else {
+            System.out.println("Queue is empty!!!");
         }
     }
 
     public void printQueueAllOrders() {
-        Iterator iterator=queue.iterator();
+        Iterator iterator = queue.iterator();
 
-        if(!queue.isEmpty()){
+        if (!queue.isEmpty()) {
             System.out.println("THE QUEUE ALL ORDERS: ");
             while (iterator.hasNext()) {
                 System.out.println(iterator.next());
             }
-        }else{
+        } else {
             System.out.println("Queue is empty!!");
         }
     }
 
-    public void removeOneOrder(String name){
+    public void removeOneOrder(String name) {
         Iterator<Order> iter = queue.iterator();
         while (iter.hasNext()) {
             if (iter.next().getCustomerName().equals(name))
-            iter.remove();
+                iter.remove();
         }
     }
 
-    public boolean findTheOneOrder(String name){
+    public boolean findTheOneOrder(String name) {
         Iterator<Order> iter = queue.iterator();
         while (iter.hasNext()) {
             if (iter.next().getCustomerName().equals(name))

@@ -15,13 +15,18 @@ public class Main {
         shop.addOneOrder(order3);
         shop.addOneOrder(order4);
 
-        shop.extractNextFirstOrder();
+        shop.extractNextOrderAndProcess();
+        shop.extractNextOrderAndProcess();
+        shop.extractNextOrderAndProcess();
+        shop.extractNextOrderAndProcess();
+        shop.extractNextOrderAndProcess();
 
-        shop.removeOneOrder("Bread");
 
-        shop.printQueueAllOrders();
-
-        System.out.println(shop.findTheOneOrder("Printer"));
+//        shop.removeOneOrder("Bread");
+//
+//        shop.printQueueAllOrders();
+//
+//        System.out.println(shop.findTheOneOrder("Printer"));
 
     }
 }
