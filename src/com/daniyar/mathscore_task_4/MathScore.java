@@ -8,15 +8,12 @@ public class MathScore {
             throw new EmptyArrayException("EmptyArrayException!!!");
         }
 
-        for (int i = 0; i < list.size(); i++) {
-            if (list.get(i) < 0){
-                throw new NegativeAmountException("NegativeAmountException!!!");
-            }
-        }
-
         double temp = 0.0;
         int size = list.size();
         for (int i = 0; i < size; i++) {
+            if (list.get(i) < 0){
+                throw new NegativeAmountException("NegativeAmountException!!!");
+            }
             temp += list.get(i);
         }
         double averageScore = temp / size;
